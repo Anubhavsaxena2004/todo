@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-^t2kkmoe!)m_6ezegol*hae#86xxmw4p=y8m5j&k)w17f69nso
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["mytodo.herokuapp.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv("test_db"),
-        'USER': os.getenv("root"),
-        'PASSWORD': os.getenv("anubhav2004"),
-        'HOST': os.getenv("MYSQL_HOST", "localhost"),  # Change to Heroku DB URL in production
-        'PORT': os.getenv("MYSQL_PORT", "3306"),
+        'NAME': 'test_db',
+        'USER': 'anubh',  
+        'PASSWORD': 'anubhav2004',  
+        'HOST': 'localhost',  
+        'PORT': '3306',
     }
 }
 
@@ -125,7 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT =  BASE_DIR / "staticfiles"
 STATIC_URL = 'static/'
 
 # Default primary key field type
